@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { grants } from "@/data/content";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Grants() {
+    const { t } = useLanguage();
+
     return (
         <section id="grants" className="py-24 border-t border-border-subtle">
             <motion.h2
@@ -28,7 +31,7 @@ export function Grants() {
                         <span className="text-sm font-mono text-text-muted w-24 shrink-0">{grant.year}</span>
                         <div>
                             <p className="text-lg font-medium text-text-primary">{grant.organization}</p>
-                            <p className="text-text-secondary w-full">{grant.description}</p>
+                            <p className="text-text-secondary w-full">{t(grant.description)}</p>
                         </div>
                     </motion.div>
                 ))}

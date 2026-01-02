@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { projects } from "@/data/content";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ExternalLinkIcon = () => (
     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -17,6 +18,7 @@ const GithubIcon = () => (
 );
 
 export function Projects() {
+    const { t } = useLanguage();
     const featuredProjects = projects.filter(p => p.featured);
     const otherProjects = projects.filter(p => !p.featured);
 
@@ -41,7 +43,7 @@ export function Projects() {
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h3 className="text-xl font-medium text-text-primary">{project.title}</h3>
-                                <p className="text-sm text-text-muted mt-1">{project.subtitle}</p>
+                                <p className="text-sm text-text-muted mt-1">{t(project.subtitle)}</p>
                             </div>
                             <span className="text-xs font-mono text-text-muted bg-white/5 px-2 py-1 rounded">
                                 {project.period}
@@ -49,13 +51,13 @@ export function Projects() {
                         </div>
 
                         <p className="text-text-secondary text-sm mb-6 leading-relaxed flex-grow">
-                            {project.description}
+                            {t(project.description)}
                         </p>
 
                         <div className="flex flex-wrap gap-2 mb-6">
-                            {project.highlights.map((h) => (
-                                <span key={h} className="text-xs px-2.5 py-1 bg-white/10 text-text-secondary rounded-full border border-white/5">
-                                    {h}
+                            {project.highlights.map((h, idx) => (
+                                <span key={idx} className="text-xs px-2.5 py-1 bg-white/10 text-text-secondary rounded-full border border-white/5">
+                                    {t(h)}
                                 </span>
                             ))}
                         </div>
@@ -103,11 +105,11 @@ export function Projects() {
                             <h4 className="font-medium text-text-primary group-hover:text-white transition-colors">{project.title}</h4>
                             <GithubIcon />
                         </div>
-                        <p className="text-sm text-text-muted mb-3">{project.subtitle}</p>
+                        <p className="text-sm text-text-muted mb-3">{t(project.subtitle)}</p>
                         <div className="flex flex-wrap gap-1.5">
-                            {project.highlights.slice(0, 2).map((h) => (
-                                <span key={h} className="text-xs px-2 py-0.5 bg-white/5 text-text-muted rounded">
-                                    {h}
+                            {project.highlights.slice(0, 2).map((h, idx) => (
+                                <span key={idx} className="text-xs px-2 py-0.5 bg-white/5 text-text-muted rounded">
+                                    {t(h)}
                                 </span>
                             ))}
                         </div>

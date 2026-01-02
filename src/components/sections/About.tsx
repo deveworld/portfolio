@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { profile } from "@/data/content";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function About() {
+    const { t } = useLanguage();
+
     return (
         <motion.section
             id="about"
@@ -14,7 +17,7 @@ export function About() {
         >
             <h2 className="text-2xl font-semibold text-text-primary mb-8">About</h2>
             <p className="text-text-secondary leading-loose text-lg max-w-2xl">
-                {profile.bio}
+                {t(profile.bio)}
             </p>
         </motion.section>
     );

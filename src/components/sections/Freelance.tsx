@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { freelance } from "@/data/content";
+import { translations } from "@/data/translations";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ExternalLinkIcon = () => (
     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -10,6 +12,9 @@ const ExternalLinkIcon = () => (
 );
 
 export function Freelance() {
+    const { language, t } = useLanguage();
+    const tr = translations[language];
+
     return (
         <motion.section
             id="freelance"
@@ -28,7 +33,7 @@ export function Freelance() {
             >
                 <div className="flex items-start justify-between mb-4">
                     <div>
-                        <h3 className="text-xl font-medium text-text-primary group-hover:text-white transition-colors">{freelance.platform}</h3>
+                        <h3 className="text-xl font-medium text-text-primary group-hover:text-white transition-colors">{t(freelance.platform)}</h3>
                         <p className="text-sm text-text-muted mt-1">{freelance.period}</p>
                     </div>
                     <div className="text-text-muted group-hover:text-white transition-colors">
@@ -37,9 +42,9 @@ export function Freelance() {
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-4">
-                    {freelance.services.map((service) => (
-                        <span key={service} className="text-sm px-3 py-1 bg-white/5 text-text-secondary rounded-full">
-                            {service}
+                    {freelance.services.map((service, idx) => (
+                        <span key={idx} className="text-sm px-3 py-1 bg-white/5 text-text-secondary rounded-full">
+                            {t(service)}
                         </span>
                     ))}
                 </div>
@@ -47,15 +52,15 @@ export function Freelance() {
                 <div className="flex gap-6 pt-4 border-t border-border-subtle">
                     <div>
                         <p className="text-2xl font-bold text-text-primary">{freelance.stats.projects}</p>
-                        <p className="text-sm text-text-muted">프로젝트</p>
+                        <p className="text-sm text-text-muted">{tr.freelance.projects}</p>
                     </div>
                     <div>
                         <p className="text-2xl font-bold text-text-primary">{freelance.stats.satisfaction}</p>
-                        <p className="text-sm text-text-muted">만족도</p>
+                        <p className="text-sm text-text-muted">{tr.freelance.satisfaction}</p>
                     </div>
                     <div>
                         <p className="text-2xl font-bold text-text-primary">{freelance.stats.rating}</p>
-                        <p className="text-sm text-text-muted">평점</p>
+                        <p className="text-sm text-text-muted">{tr.freelance.rating}</p>
                     </div>
                 </div>
             </a>

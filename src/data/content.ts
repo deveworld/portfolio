@@ -3,9 +3,15 @@ export const profile = {
         display: "Deveworld",
         sub: "Gihyeon Sim (심기현)",
     },
-    tagline: "Student Researcher · AI/ML · Backend",
+    tagline: {
+        en: "Student Researcher · AI/ML · Backend",
+        ko: "학생 연구원 · AI/ML · 백엔드",
+    },
     avatar: "/deveworld.png",
-    bio: "고등학생 개발자이자 AI 연구자입니다. LLM, Test-Time Training, 한국어 NLP에 관심을 가지고 있으며, 오픈소스와 재현 가능한 AI 연구를 지향합니다. 백엔드부터 ML까지 다루는 풀스택 개발자이기도 합니다. (디자인 빼고요 😅)",
+    bio: {
+        en: "A high school developer and AI researcher. Interested in LLMs, Test-Time Training, and Korean NLP. I pursue open-source and reproducible AI research. Also a fullstack developer from backend to ML. (Except design 😅)",
+        ko: "고등학생 개발자이자 AI 연구자입니다. LLM, Test-Time Training, 한국어 NLP에 관심을 가지고 있으며, 오픈소스와 재현 가능한 AI 연구를 지향합니다. 백엔드부터 ML까지 다루는 풀스택 개발자이기도 합니다. (디자인 빼고요 😅)",
+    },
     links: {
         github: "https://github.com/deveworld",
         linkedin: "https://linkedin.com/in/deveworld",
@@ -19,9 +25,15 @@ export const projects = [
     // Featured (Research) - Priority Order
     {
         title: "PonderTTT",
-        subtitle: "Adaptive Budget-Aware Test-Time Training",
+        subtitle: {
+            en: "Adaptive Budget-Aware Test-Time Training",
+            ko: "적응형 예산 인식 테스트 시간 학습",
+        },
         period: "Nov 2025 - Present",
-        description: "코드 생성 모델을 위한 적응형 추론 시간 학습(TTT) 프레임워크. JAX/Flax NNX 구현, 82-89% Oracle Recovery 달성.",
+        description: {
+            en: "Adaptive test-time training (TTT) framework for code generation models. JAX/Flax NNX implementation, achieving 82-89% Oracle Recovery.",
+            ko: "코드 생성 모델을 위한 적응형 추론 시간 학습(TTT) 프레임워크. JAX/Flax NNX 구현, 82-89% Oracle Recovery 달성.",
+        },
         highlights: ["82-89% Oracle Recovery", "JAX/Flax NNX", "arXiv Preprint"],
         featured: true,
         links: {
@@ -32,9 +44,15 @@ export const projects = [
     },
     {
         title: "BitNet-TT",
-        subtitle: "BitNet LLM on Tenstorrent Hardware",
+        subtitle: {
+            en: "BitNet LLM on Tenstorrent Hardware",
+            ko: "텐스토렌트 하드웨어에서의 BitNet LLM",
+        },
         period: "Dec 2025 - Present",
-        description: "Tenstorrent Blackhole p150a에서 BitNet (1-bit LLM) 구현. HuggingFace 호환, KV-Cache 지원, HiFi2 Compute Kernel 활용.",
+        description: {
+            en: "BitNet (1-bit LLM) implementation on Tenstorrent Blackhole p150a. HuggingFace compatible, KV-Cache support, HiFi2 Compute Kernel.",
+            ko: "Tenstorrent Blackhole p150a에서 BitNet (1-bit LLM) 구현. HuggingFace 호환, KV-Cache 지원, HiFi2 Compute Kernel 활용.",
+        },
         highlights: ["Tenstorrent Korea OSS", "0.99+ Correlation", "BFP8 Matmul"],
         featured: true,
         links: {
@@ -43,9 +61,15 @@ export const projects = [
     },
     {
         title: "KorT",
-        subtitle: "Korean Translation Benchmark",
+        subtitle: {
+            en: "Korean Translation Benchmark",
+            ko: "한국어 번역 벤치마크",
+        },
         period: "Apr 2025 - Present",
-        description: "LLM-as-a-judge 방식의 한국어-다국어 번역 품질 평가 벤치마크. BLEU의 한계를 극복한 LLM 기반 평가 시스템.",
+        description: {
+            en: "Korean-multilingual translation quality evaluation benchmark using LLM-as-a-judge. LLM-based evaluation system overcoming BLEU limitations.",
+            ko: "LLM-as-a-judge 방식의 한국어-다국어 번역 품질 평가 벤치마크. BLEU의 한계를 극복한 LLM 기반 평가 시스템.",
+        },
         highlights: ["22 GitHub Stars", "PyCon Korea 2025", "PyPI Package"],
         featured: true,
         links: {
@@ -56,10 +80,20 @@ export const projects = [
     },
     {
         title: "Gemago",
-        subtitle: "On-Device Translation Model",
+        subtitle: {
+            en: "On-Device Translation Model",
+            ko: "온디바이스 번역 모델",
+        },
         period: "May 2024 - Dec 2024",
-        description: "Google Gemma 기반 경량 한영 양방향 번역 모델. 일반 소비자 GPU에서 실시간 번역 가능하도록 최적화.",
-        highlights: ["Gemma 2B 기반", "60+ HF Downloads", "Google TRC 지원"],
+        description: {
+            en: "Lightweight Korean-English bidirectional translation model based on Google Gemma. Optimized for real-time translation on consumer GPUs.",
+            ko: "Google Gemma 기반 경량 한영 양방향 번역 모델. 일반 소비자 GPU에서 실시간 번역 가능하도록 최적화.",
+        },
+        highlights: [
+            { en: "Gemma 2B Based", ko: "Gemma 2B 기반" },
+            "60+ HF Downloads",
+            { en: "Google TRC Support", ko: "Google TRC 지원" },
+        ],
         featured: true,
         links: {
             huggingface: "https://huggingface.co/DevWorld/Gemago-2b",
@@ -69,10 +103,20 @@ export const projects = [
     // Hackathon
     {
         title: "PaperPath",
-        subtitle: "AI 기반 맞춤형 논문 학습 경로 생성기",
+        subtitle: {
+            en: "AI-Powered Personalized Paper Learning Path Generator",
+            ko: "AI 기반 맞춤형 논문 학습 경로 생성기",
+        },
         period: "Dec 2025",
-        description: "논문의 선행 지식을 분석해 개인화된 학습 경로를 생성하는 AI 도구. Instruct.KR x Sionic 2025 해커톤 3등 수상.",
-        highlights: ["🥉 Hackathon 3rd", "D3.js 시각화", "MCP Agent"],
+        description: {
+            en: "AI tool that analyzes paper prerequisites and generates personalized learning paths. 3rd place at Instruct.KR x Sionic 2025 Hackathon.",
+            ko: "논문의 선행 지식을 분석해 개인화된 학습 경로를 생성하는 AI 도구. Instruct.KR x Sionic 2025 해커톤 3등 수상.",
+        },
+        highlights: [
+            { en: "🥉 Hackathon 3rd", ko: "🥉 해커톤 3등" },
+            { en: "D3.js Visualization", ko: "D3.js 시각화" },
+            "MCP Agent",
+        ],
         featured: false,
         links: {
             github: "https://github.com/deveworld/paperpath",
@@ -81,9 +125,15 @@ export const projects = [
     // Other Projects
     {
         title: "Gemma-EasyLM",
-        subtitle: "TPU에서 Gemma 파인튜닝",
+        subtitle: {
+            en: "Fine-tuning Gemma on TPU",
+            ko: "TPU에서 Gemma 파인튜닝",
+        },
         period: "2024",
-        description: "EasyLM 프레임워크에 Google Gemma 모델을 통합하여 TPU에서 파인튜닝. TPUv4-64 포드 슬라이스 분산 학습 지원.",
+        description: {
+            en: "Integrated Google Gemma model into EasyLM framework for TPU fine-tuning. Supports distributed training on TPUv4-64 pod slices.",
+            ko: "EasyLM 프레임워크에 Google Gemma 모델을 통합하여 TPU에서 파인튜닝. TPUv4-64 포드 슬라이스 분산 학습 지원.",
+        },
         highlights: ["TPU Pods", "JAX/Flax", "HuggingFace"],
         featured: false,
         links: {
@@ -92,9 +142,15 @@ export const projects = [
     },
     {
         title: "ArchKing",
-        subtitle: "Minecraft 서버 플러그인",
+        subtitle: {
+            en: "Minecraft Server Plugin",
+            ko: "Minecraft 서버 플러그인",
+        },
         period: "2023",
-        description: "유튜버 '건축대장'의 콘텐츠를 위한 Minecraft 서버 플러그인. Paper/Purpur 호환.",
+        description: {
+            en: "Minecraft server plugin for YouTuber 'ArchKing' content. Paper/Purpur compatible.",
+            ko: "유튜버 '건축대장'의 콘텐츠를 위한 Minecraft 서버 플러그인. Paper/Purpur 호환.",
+        },
         highlights: ["5 GitHub Stars", "Kotlin", "Archived"],
         featured: false,
         links: {
@@ -103,9 +159,15 @@ export const projects = [
     },
     {
         title: "ButterLib",
-        subtitle: "Minecraft 플러그인 라이브러리",
+        subtitle: {
+            en: "Minecraft Plugin Library",
+            ko: "Minecraft 플러그인 라이브러리",
+        },
         period: "2023",
-        description: "Kotlin 기반 Minecraft 플러그인 개발 라이브러리. JitPack 배포.",
+        description: {
+            en: "Kotlin-based Minecraft plugin development library. Distributed via JitPack.",
+            ko: "Kotlin 기반 Minecraft 플러그인 개발 라이브러리. JitPack 배포.",
+        },
         highlights: ["Kotlin", "JitPack"],
         featured: false,
         links: {
@@ -114,9 +176,15 @@ export const projects = [
     },
     {
         title: "rocket",
-        subtitle: "로켓 시뮬레이션",
+        subtitle: {
+            en: "Rocket Simulation",
+            ko: "로켓 시뮬레이션",
+        },
         period: "2023",
-        description: "Python 기반 로켓 물리 시뮬레이션 프로젝트.",
+        description: {
+            en: "Python-based rocket physics simulation project.",
+            ko: "Python 기반 로켓 물리 시뮬레이션 프로젝트.",
+        },
         highlights: ["Python", "Physics"],
         featured: false,
         links: {
@@ -125,9 +193,15 @@ export const projects = [
     },
     {
         title: "SFML-Physics",
-        subtitle: "물리 시뮬레이션",
+        subtitle: {
+            en: "Physics Simulation",
+            ko: "물리 시뮬레이션",
+        },
         period: "2022",
-        description: "C++과 SFML을 활용한 물리 시뮬레이션 프로젝트.",
+        description: {
+            en: "Physics simulation project using C++ and SFML.",
+            ko: "C++과 SFML을 활용한 물리 시뮬레이션 프로젝트.",
+        },
         highlights: ["C++", "SFML", "CMake"],
         featured: false,
         links: {
@@ -138,7 +212,10 @@ export const projects = [
 
 export const presentations = [
     {
-        title: "고등학생이 만들어 본 LLM-as-a-judge 번역 벤치마크 리더보드",
+        title: {
+            en: "A High Schooler's LLM-as-a-judge Translation Benchmark Leaderboard",
+            ko: "고등학생이 만들어 본 LLM-as-a-judge 번역 벤치마크 리더보드",
+        },
         event: "PyCon Korea 2025",
         type: "Conference Talk",
         link: "https://www.youtube.com/watch?v=oIIgDzVz_IM",
@@ -147,8 +224,14 @@ export const presentations = [
 
 export const media = [
     {
-        title: "파파고 vs 구글, AI가 보기엔 누가 더 번역을 잘할까?",
-        publisher: "요즘IT (Wishket)",
+        title: {
+            en: "Papago vs Google, Who Translates Better According to AI?",
+            ko: "파파고 vs 구글, AI가 보기엔 누가 더 번역을 잘할까?",
+        },
+        publisher: {
+            en: "Yozm IT (Wishket)",
+            ko: "요즘IT (Wishket)",
+        },
         year: "2025",
         link: "https://yozm.wishket.com/magazine/detail/3524/",
     },
@@ -167,28 +250,47 @@ export const openSourceContributions = [
         title: "Add uv support for Python package installation",
         type: "PR",
         link: "https://github.com/tenstorrent/tt-installer/pull/103",
-        description: "uv를 활용한 Python 패키지 설치 속도 개선",
+        description: {
+            en: "Improved Python package installation speed using uv",
+            ko: "uv를 활용한 Python 패키지 설치 속도 개선",
+        },
     },
     {
         repo: "seleniumbase/SeleniumBase",
         title: "Compatibility for geckodriver aarch64",
         type: "PR",
         link: "https://github.com/seleniumbase/SeleniumBase/pull/3154",
-        description: "aarch64 아키텍처 호환성 추가",
+        description: {
+            en: "Added aarch64 architecture compatibility",
+            ko: "aarch64 아키텍처 호환성 추가",
+        },
     },
     {
         repo: "martiniifun/pyhwpx",
-        title: "subprocess 예외 처리 개선",
+        title: {
+            en: "Improved subprocess exception handling",
+            ko: "subprocess 예외 처리 개선",
+        },
         type: "PR",
         link: "https://github.com/martiniifun/pyhwpx/pull/10",
-        description: "가상환경에서의 pip 호출 예외 처리",
+        description: {
+            en: "pip call exception handling in virtual environments",
+            ko: "가상환경에서의 pip 호출 예외 처리",
+        },
     },
 ];
 
 export const freelance = {
-    platform: "크몽",
+    platform: {
+        en: "Kmong",
+        ko: "크몽",
+    },
     period: "2023 - Present",
-    services: ["AI/LLM 연동", "웹 크롤링", "자동화 개발"],
+    services: [
+        { en: "AI/LLM Integration", ko: "AI/LLM 연동" },
+        { en: "Web Crawling", ko: "웹 크롤링" },
+        { en: "Automation Development", ko: "자동화 개발" },
+    ],
     stats: {
         projects: 16,
         satisfaction: "100%",
@@ -199,8 +301,14 @@ export const freelance = {
 
 export const achievements = [
     {
-        title: "Instruct.KR x Sionic 2025 해커톤",
-        award: "3등",
+        title: {
+            en: "Instruct.KR x Sionic 2025 Hackathon",
+            ko: "Instruct.KR x Sionic 2025 해커톤",
+        },
+        award: {
+            en: "3rd Place",
+            ko: "3등",
+        },
         project: "PaperPath",
         year: "2025",
     },
@@ -210,16 +318,25 @@ export const grants = [
     {
         year: "2024-2025",
         organization: "Google TPU Research Cloud",
-        description: "TPU 리소스 지원",
+        description: {
+            en: "TPU resource support",
+            ko: "TPU 리소스 지원",
+        },
     },
     {
         year: "2024",
         organization: "Anthropic",
-        description: "API 크레딧 지원 (KorT 평가용)",
+        description: {
+            en: "API credit support (for KorT evaluation)",
+            ko: "API 크레딧 지원 (KorT 평가용)",
+        },
     },
     {
         year: "2025",
         organization: "Gcube",
-        description: "RTX 5090/4090/5080 GPU 체험 지원",
+        description: {
+            en: "RTX 5090/4090/5080 GPU experience support",
+            ko: "RTX 5090/4090/5080 GPU 체험 지원",
+        },
     },
 ];

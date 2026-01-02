@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { profile } from "@/data/content";
+import { translations } from "@/data/translations";
+import { useLanguage } from "@/context/LanguageContext";
 
 const MailIcon = () => (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -16,6 +18,9 @@ const GithubIcon = () => (
 );
 
 export function Contact() {
+    const { language } = useLanguage();
+    const tr = translations[language];
+
     return (
         <section id="contact" className="py-24 border-t border-border-subtle">
             <motion.div
@@ -24,9 +29,9 @@ export function Contact() {
                 viewport={{ once: true }}
                 className="text-center"
             >
-                <h2 className="text-3xl font-semibold text-text-primary mb-6">Let's Connect</h2>
+                <h2 className="text-3xl font-semibold text-text-primary mb-6">Let&apos;s Connect</h2>
                 <p className="text-text-secondary mb-10 max-w-xl mx-auto">
-                    관심 있는 연구 주제나 협업 제안이 있으시다면 언제든 연락해 주세요.
+                    {tr.contact.description}
                 </p>
 
                 <div className="flex justify-center gap-6">

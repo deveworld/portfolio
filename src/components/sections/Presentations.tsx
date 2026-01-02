@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { presentations, media } from "@/data/content";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { useLanguage } from "@/context/LanguageContext";
 
 const YouTubeIcon = () => (
     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -17,6 +18,8 @@ const ExternalLinkIcon = () => (
 );
 
 export function Presentations() {
+    const { t } = useLanguage();
+
     return (
         <section id="presentations" className="py-24">
             <motion.h2
@@ -29,15 +32,15 @@ export function Presentations() {
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {presentations.map((p) => (
-                    <a key={p.title} href={p.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                {presentations.map((p, idx) => (
+                    <a key={idx} href={p.link} target="_blank" rel="noopener noreferrer" className="block h-full">
                         <SpotlightCard className="p-6 h-full flex items-start gap-4 hover:border-border-hover/80 transition-colors">
                             <div className="text-red-500 mt-1">
                                 <YouTubeIcon />
                             </div>
                             <div>
                                 <h3 className="text-lg font-medium text-text-primary group-hover:text-white transition-colors">
-                                    {p.title}
+                                    {t(p.title)}
                                 </h3>
                                 <p className="text-sm text-text-muted mt-1">{p.event} · {p.type}</p>
                             </div>
@@ -45,17 +48,17 @@ export function Presentations() {
                     </a>
                 ))}
 
-                {media.map((m) => (
-                    <a key={m.title} href={m.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                {media.map((m, idx) => (
+                    <a key={idx} href={m.link} target="_blank" rel="noopener noreferrer" className="block h-full">
                         <SpotlightCard className="p-6 h-full flex items-start gap-4 hover:border-border-hover/80 transition-colors">
                             <div className="text-text-muted mt-1">
                                 <ExternalLinkIcon />
                             </div>
                             <div>
                                 <h3 className="text-lg font-medium text-text-primary group-hover:text-white transition-colors">
-                                    {m.title}
+                                    {t(m.title)}
                                 </h3>
-                                <p className="text-sm text-text-muted mt-1">{m.publisher} · {m.year}</p>
+                                <p className="text-sm text-text-muted mt-1">{t(m.publisher)} · {m.year}</p>
                             </div>
                         </SpotlightCard>
                     </a>

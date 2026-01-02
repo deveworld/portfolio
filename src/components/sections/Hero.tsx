@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { profile } from "@/data/content";
+import { useLanguage } from "@/context/LanguageContext";
 
 const GithubIcon = () => (
     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -35,6 +36,8 @@ const MailIcon = () => (
 );
 
 export function Hero() {
+    const { t } = useLanguage();
+
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden -mt-12">
             {/* Ambient Glow */}
@@ -79,7 +82,7 @@ export function Hero() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="mt-4 text-lg text-text-secondary"
             >
-                {profile.tagline}
+                {t(profile.tagline)}
             </motion.p>
 
             <motion.div

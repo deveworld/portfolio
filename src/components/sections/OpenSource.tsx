@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { openSourceContributions } from "@/data/content";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ExternalLinkIcon = () => (
     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -10,6 +11,8 @@ const ExternalLinkIcon = () => (
 );
 
 export function OpenSource() {
+    const { t } = useLanguage();
+
     return (
         <section id="opensource" className="py-16">
             <motion.h2
@@ -42,8 +45,8 @@ export function OpenSource() {
                                 <span className="text-xs font-mono text-text-muted bg-white/5 px-2 py-0.5 rounded">{contrib.type}</span>
                                 <span className="text-sm text-text-muted truncate">{contrib.repo}</span>
                             </div>
-                            <p className="text-text-primary font-medium group-hover:text-white transition-colors">{contrib.title}</p>
-                            <p className="text-sm text-text-secondary mt-1">{contrib.description}</p>
+                            <p className="text-text-primary font-medium group-hover:text-white transition-colors">{t(contrib.title)}</p>
+                            <p className="text-sm text-text-secondary mt-1">{t(contrib.description)}</p>
                         </div>
                     </motion.a>
                 ))}
