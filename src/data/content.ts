@@ -15,9 +15,11 @@ export const profile = {
     links: {
         github: "https://github.com/deveworld",
         linkedin: "https://linkedin.com/in/deveworld",
+        x: "https://x.com/dev_world_",
         orcid: "https://orcid.org/0000-0001-7372-9423",
         email: "world@worldsw.dev",
         blog: "https://blog.worldsw.dev",
+        calendly: "https://calendly.com/sodevsgh/30min",
     },
 };
 
@@ -39,7 +41,7 @@ export const projects = [
         links: {
             page: "https://ponderttt.worldsw.dev",
             github: "https://github.com/deveworld/ponderTTT",
-            paper: "https://ponderttt.worldsw.dev/PonderTTT_v1_Preprint.pdf",
+            paper: "https://arxiv.org/abs/2601.00894",
         },
     },
     {
@@ -286,13 +288,17 @@ export const freelance = {
         ko: "크몽",
     },
     period: "2023 - Present",
+    badge: {
+        en: "Top 2% Expert · Prime",
+        ko: "상위 2% 전문가 Prime",
+    },
     services: [
         { en: "AI/LLM Integration", ko: "AI/LLM 연동" },
         { en: "Web Crawling", ko: "웹 크롤링" },
         { en: "Automation Development", ko: "자동화 개발" },
     ],
     stats: {
-        projects: 16,
+        projects: 22,
         satisfaction: "100%",
         rating: "5.0/5.0",
     },

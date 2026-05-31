@@ -33,7 +33,12 @@ export function Freelance() {
             >
                 <div className="flex items-start justify-between mb-4">
                     <div>
-                        <h3 className="text-xl font-medium text-text-primary group-hover:text-white transition-colors">{t(freelance.platform)}</h3>
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <h3 className="text-xl font-medium text-text-primary group-hover:text-white transition-colors">{t(freelance.platform)}</h3>
+                            <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/20">
+                                ★ {t(freelance.badge)}
+                            </span>
+                        </div>
                         <p className="text-sm text-text-muted mt-1">{freelance.period}</p>
                     </div>
                     <div className="text-text-muted group-hover:text-white transition-colors">

@@ -17,6 +17,12 @@ const GithubIcon = () => (
     </svg>
 );
 
+const CalendarIcon = () => (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+    </svg>
+);
+
 export function Contact() {
     const { language } = useLanguage();
     const tr = translations[language];
@@ -34,10 +40,19 @@ export function Contact() {
                     {tr.contact.description}
                 </p>
 
-                <div className="flex justify-center gap-6">
+                <div className="flex flex-wrap justify-center gap-6">
+                    <a
+                        href={profile.links.calendly}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-3 px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-neutral-200 transition-colors"
+                    >
+                        <CalendarIcon />
+                        <span>Contact Me</span>
+                    </a>
                     <a
                         href={`mailto:${profile.links.email}`}
-                        className="group flex items-center gap-3 px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-neutral-200 transition-colors"
+                        className="flex items-center gap-3 px-6 py-3 bg-bg-surface border border-border-subtle rounded-full text-white hover:border-white/20 transition-all"
                     >
                         <MailIcon />
                         <span>Email Me</span>

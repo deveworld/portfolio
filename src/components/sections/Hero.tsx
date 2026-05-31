@@ -17,6 +17,12 @@ const LinkedInIcon = () => (
     </svg>
 );
 
+const XIcon = () => (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+);
+
 const OrcidIcon = () => (
     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z" />
@@ -96,6 +102,9 @@ export function Hero() {
                 </a>
                 <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-white transition-colors duration-300" title="LinkedIn">
                     <LinkedInIcon />
+                </a>
+                <a href={profile.links.x} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-white transition-colors duration-300" title="X">
+                    <XIcon />
                 </a>
                 <a href={profile.links.blog} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-white transition-colors duration-300" title="Blog">
                     <BlogIcon />
