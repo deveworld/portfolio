@@ -39,6 +39,12 @@ const OrcidIcon = () => (
     </svg>
 );
 
+const ScholarIcon = () => (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+    </svg>
+);
+
 const BlogIcon = () => (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
@@ -127,6 +133,9 @@ export function Hero() {
                 </a>
                 <a href={profile.links.orcid} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-white transition-colors duration-300" title="ORCID">
                     <OrcidIcon />
+                </a>
+                <a href={profile.links.scholar} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-white transition-colors duration-300" title="Google Scholar">
+                    <ScholarIcon />
                 </a>
                 <a href={`mailto:${profile.links.email}`} className="text-text-muted hover:text-white transition-colors duration-300" title="Email">
                     <MailIcon />

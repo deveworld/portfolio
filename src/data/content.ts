@@ -19,6 +19,7 @@ export const profile = {
         discord: "https://discord.com/users/507157311555371008",
         huggingface: "https://huggingface.co/DevWorld",
         orcid: "https://orcid.org/0000-0001-7372-9423",
+        scholar: "https://scholar.google.com/citations?user=xc1eeZIAAAAJ",
         email: "world@worldsw.dev",
         blog: "https://blog.worldsw.dev",
         calendly: "https://calendly.com/sodevsgh/30min",
