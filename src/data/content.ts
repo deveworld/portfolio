@@ -16,6 +16,7 @@ export const profile = {
         github: "https://github.com/deveworld",
         linkedin: "https://linkedin.com/in/deveworld",
         x: "https://x.com/dev_world_",
+        discord: "https://discord.com/users/507157311555371008",
         orcid: "https://orcid.org/0000-0001-7372-9423",
         email: "world@worldsw.dev",
         blog: "https://blog.worldsw.dev",
