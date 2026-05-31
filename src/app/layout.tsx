@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://worldsw.dev"),
   title: "Deveworld | AI/ML Researcher",
   description: "Student Researcher specializing in LLMs, Test-Time Training, and Korean NLP. Building open-source AI research.",
   keywords: ["AI", "ML", "NLP", "LLM", "Test-Time Training", "Korean NLP", "Deveworld"],
@@ -24,7 +25,15 @@ export const metadata: Metadata = {
     description: "Student Researcher specializing in LLMs and Korean NLP",
     url: "https://worldsw.dev",
     siteName: "Deveworld",
+    locale: "ko_KR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Deveworld | AI/ML Researcher",
+    description: "Student Researcher specializing in LLMs and Korean NLP",
+    site: "@dev_world_",
+    creator: "@dev_world_",
   },
 };
 

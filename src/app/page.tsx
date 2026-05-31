@@ -3,6 +3,7 @@ import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
 import { OpenSource } from "@/components/sections/OpenSource";
 import { Presentations } from "@/components/sections/Presentations";
+import { Achievements } from "@/components/sections/Achievements";
 import { Skills } from "@/components/sections/Skills";
 import { Freelance } from "@/components/sections/Freelance";
 import { Grants } from "@/components/sections/Grants";
@@ -20,6 +21,7 @@ export default function Home() {
         <Projects />
         <OpenSource />
         <Presentations />
+        <Achievements />
         <Skills />
         <Freelance />
         <Grants />
