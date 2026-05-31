@@ -67,3 +67,15 @@ body {
 @utility text-gradient {
   @apply bg-clip-text text-transparent bg-linear-to-b from-white to-white/50;
 }
+
+/* Print (CV page) */
+@media print {
+  @page {
+    margin: 14mm;
+  }
+  body {
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
