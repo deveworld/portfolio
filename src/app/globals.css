@@ -53,7 +53,9 @@ body {
 .bg-dot-pattern {
   background-image: radial-gradient(var(--color-border-subtle) 1px, transparent 1px);
   background-size: 24px 24px;
-  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  /* Fade vertically only (full width) so there are no darker "bars" on the left/right edges. */
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
 .bg-grid-pattern {
