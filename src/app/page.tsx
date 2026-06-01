@@ -12,9 +12,6 @@ import { Contact } from "@/components/sections/Contact";
 export default function Home() {
   return (
     <main className="min-h-screen bg-bg-primary text-text-primary overflow-x-hidden selection:bg-white/20">
-      {/* Background Patterns */}
-      <div className="hidden md:block fixed inset-0 bg-dot-pattern opacity-20 pointer-events-none" />
-
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <Hero />
         <About />
