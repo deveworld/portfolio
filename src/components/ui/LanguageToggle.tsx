@@ -1,10 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function LanguageToggle() {
     const { language, setLanguage } = useLanguage();
+    const pathname = usePathname();
+
+    // CV page has its own toggle inside its toolbar — avoid overlap.
+    if (pathname?.startsWith("/cv")) return null;
 
     return (
         <motion.button

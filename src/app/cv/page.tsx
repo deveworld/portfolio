@@ -27,7 +27,7 @@ function SectionTitle({ children }: { children: ReactNode }) {
 }
 
 export default function CVPage() {
-    const { t } = useLanguage();
+    const { t, language, setLanguage } = useLanguage();
 
     const featured = projects.filter((p) => p.featured);
     const others = projects.filter((p) => !p.featured);
@@ -44,16 +44,29 @@ export default function CVPage() {
     return (
         <div className="min-h-screen bg-neutral-100 print:bg-white">
             {/* Screen-only toolbar */}
-            <div className="print:hidden sticky top-0 z-10 flex items-center justify-between max-w-[820px] mx-auto px-4 py-3">
-                <Link href="/" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
-                    ← {t({ en: "Back to portfolio", ko: "포트폴리오로" })}
-                </Link>
-                <button
-                    onClick={() => window.print()}
-                    className="text-sm font-medium px-4 py-2 bg-neutral-900 text-white rounded-full hover:bg-neutral-700 transition-colors"
-                >
-                    {t({ en: "Save as PDF", ko: "PDF로 저장" })}
-                </button>
+            <div className="print:hidden sticky top-0 z-50 border-b border-neutral-200 bg-neutral-100/90 backdrop-blur-sm">
+                <div className="flex items-center justify-between gap-3 max-w-[820px] mx-auto px-4 py-3">
+                    <Link href="/" className="min-w-0 truncate text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
+                        ← {t({ en: "Back", ko: "포트폴리오로" })}
+                    </Link>
+                    <div className="flex items-center gap-2 shrink-0">
+                        <button
+                            onClick={() => setLanguage(language === "en" ? "ko" : "en")}
+                            className="flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-full border border-neutral-300 hover:border-neutral-400 transition-colors"
+                            aria-label={`Switch to ${language === "en" ? "Korean" : "English"}`}
+                        >
+                            <span className={language === "en" ? "text-neutral-900" : "text-neutral-400"}>EN</span>
+                            <span className="text-neutral-300">/</span>
+                            <span className={language === "ko" ? "text-neutral-900" : "text-neutral-400"}>KO</span>
+                        </button>
+                        <button
+                            onClick={() => window.print()}
+                            className="text-sm font-medium px-4 py-2 bg-neutral-900 text-white rounded-full hover:bg-neutral-700 transition-colors whitespace-nowrap"
+                        >
+                            {t({ en: "Save as PDF", ko: "PDF로 저장" })}
+                        </button>
+                    </div>
+                </div>
             </div>
 
             {/* CV sheet */}
