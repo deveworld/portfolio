@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Deveworld | AI/ML Researcher",
     description: "Student Researcher specializing in LLMs and Korean NLP",
-    site: "@dev_world_",
-    creator: "@dev_world_",
+    site: "@dev0world",
+    creator: "@dev0world",
   },
 };
 
